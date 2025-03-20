@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #2e2e2e;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+.horizontal-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.sound-image img {
+  width: 40px; /* 아이콘 크기를 40px로 줄임 */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.sound-image img:hover {
+  transform: scale(1.2);
+}
+
+.memo-container {
+  border: 1px solid #2e2e2e;
+  padding: 10px;
+  display: inline-block;
+  background: #2e2e2e;
+  color: white;
+  position: relative;
+  width: 95%;
+  height: 100vh;
+}
+
+textarea {
+  width: 95%;
+  height: 90%;
+  font-size: 25px;
+  font-weight: bolder;
+  border: 2px solid wheat;
+  resize: none;
+  margin-top: 10px;
+  background-color: wheat;
+}
+
+.controls {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 95%;
+  height: 35px;
+  padding-left: 20px;
+}
+
+.button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.button:hover {
+  background: darkred;
+}
+
+#explosion {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+#explosion img {
+  max-width: 80%;
+  max-height: 80%;
+  animation: growAndCircleFade 1s ease-out forwards; /* 애니메이션 이름 수정 */
+}
+
+@keyframes growAndCircleFade {
+  0% {
+    transform: scale(0); /* 처음에 작게 시작 */
+    opacity: 1; /* 불투명도 1로 시작 */
+    border-radius: 0%; /* 원형이 아님 */
+  }
+  50% {
+    transform: scale(5); /* 중간에 약간 커짐 */
+    opacity: 1; /* 불투명도 유지 */
+    border-radius: 50%; /* 여전히 원형이 아님 */
+  }
+  80% {
+    transform: scale(0.2); /* 거의 다 사라질 때 크기 줄어듦 */
+    opacity: 0.5; /* 불투명도 약간 줄어듦 */
+    border-radius: 50%; /* 이미지가 원형으로 변함 */
+  }
+  100% {
+    transform: scale(0); /* 완전히 작아짐 */
+    opacity: 0; /* 완전히 투명해짐 */
+    border-radius: 0%; /* 여전히 원형 */
+  }
+}
+
+h6 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+h1 {
+  margin-bottom: 0px;
+}

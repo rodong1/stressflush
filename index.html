@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stress flush notepad</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Funny stress flush Notepad</h1>
+    <h6>Pour out your emotions here and exlpode them without saving</h6>
+
+    <!-- 효과음 버튼들 -->
+    <div class="horizontal-buttons">
+      <div class="sound-image" onclick="playCustomSound('spit.mp3')">
+        <img src="spit.png" alt="Spit" />
+      </div>
+      <div class="sound-image" onclick="playCustomSound('exasperation.mp3')">
+        <img src="exasperation.png" alt="Exasperation" />
+      </div>
+      <div class="sound-image" onclick="playCustomSound('bye.mp3')">
+        <img src="bye.png" alt="Bye" />
+      </div>
+      <div class="sound-image" onclick="playCustomSound('gun.mp3')">
+        <img src="shooting.png" alt="Gun" />
+      </div>
+      <div class="sound-image" onclick="playCustomSound('slash.mp3')">
+        <img src="punch.png" alt="Slash" />
+      </div>
+      <div class="sound-image" onclick="playCustomSound('fart.mp3')">
+        <img src="fart.png" alt="Fart" />
+      </div>
+      <div class="sound-image" onclick="playCustomSound('drum120.mp3')">
+        <img src="drum.png" alt="Drum" />
+      </div>
+      <div class="sound-image" onclick="playCustomSound('shout.mp3')">
+        <img src="shout.png" alt="Shout" />
+      </div>
+    </div>
+
+    <!-- 메모 입력창 -->
+    <div class="memo-container">
+      <div class="controls">
+        <select id="fontSizeSelector" onchange="changeFontSize(this.value)">
+          <option value="13">13px</option>
+          <option value="15">15px</option>
+          <option value="20" selected>20px</option>
+          <option value="25">25px</option>
+          <option value="35">35px</option>
+          <option value="45">45px</option>
+          <option value="55">55px</option>
+          <option value="60">60px</option>
+          <option value="70">70px</option>
+        </select>
+        <button class="button" onclick="burnMemo()">Explode it</button>
+      </div>
+      <textarea id="memo"></textarea>
+    </div>
+
+    <div id="explosion">
+      <img src="explosion.jpg" alt="Explosion" />
+    </div>
+
+    <audio id="explosion-sound" preload="auto">
+      <source src="original-bomb.mp3" type="audio/wav" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
